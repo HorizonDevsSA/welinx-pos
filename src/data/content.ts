@@ -1,0 +1,777 @@
+import { SolutionVertical, ProductFeature, HardwareItem, PricingTier, CompetitorComparison } from '../types';
+
+export const SOLUTIONS_DATA: SolutionVertical[] = [
+  {
+    id: 'restaurants-and-bars',
+    slug: 'restaurants-and-bars',
+    title: 'Restaurants, Bars & Full-Service Hospitality',
+    tagline: 'Orchestrate floorplans, course firing, and split checks with zero server lag.',
+    heroBadge: '🍽️ Full-Service Dining OS',
+    description: 'Designed for high-capacity dining rooms, craft cocktail bars, and rooftop lounges. Keep tickets flowing smoothly between table tablets, bar rails, and kitchen lines even during peak Friday rushes.',
+    benefits: [
+      {
+        title: 'Interactive Visual Table Floorplans',
+        description: 'Drag-and-drop floor layouts, real-time table status (seated, ordered, appetizers, check dropped), and server section assignments.',
+        icon: 'LayoutGrid',
+      },
+      {
+        title: 'Course Firing & Kitchen Routing',
+        description: 'Automatic pacing for drinks, starters, and mains. Route grill items to Line 1 and salads to Cold Station with custom prep timers.',
+        icon: 'ChefHat',
+      },
+      {
+        title: 'Instant Multi-Way Bill Splitting',
+        description: 'Split checks by seat, by item, or custom proportions in seconds with pay-at-table handhelds and digital tipping.',
+        icon: 'Receipt',
+      },
+      {
+        title: 'Bar Tabs & Card Pre-Authorization',
+        description: 'Open tabs with a single EMV tap, store tokenized pre-auth, and close out automatically without physical cards at 2 AM.',
+        icon: 'CreditCard',
+      },
+    ],
+    hardwareBundle: {
+      name: 'Full-Service Station Bundle',
+      tag: 'Recommended for Dining Rooms',
+      image: 'https://images.unsplash.com/photo-1556742049-0a67e5572293?auto=format&fit=crop&w=800&q=80',
+      description: '15.6" Dual-screen POS Terminal + 2 Handheld mPOS Table Tablets + Kitchen Thermal Printer.',
+      specs: ['15.6" 1080p Touch', '2x Tap-to-Pay Handhelds', '80mm Thermal Printer', 'Heavy-Duty Cash Drawer'],
+      priceOutright: 1299,
+      priceHaas: 49,
+    },
+    metrics: [
+      { value: '38%', label: 'Faster Table Turns' },
+      { value: '99.999%', label: 'Local Uptime' },
+      { value: '+24%', label: 'Average Server Tip' },
+      { value: '0 sec', label: 'Offline Lag' },
+    ],
+    caseStudy: {
+      quote: "On Friday nights with 180 seats full, any POS freeze is catastrophic. Welinx has never stuttered once. The floor map and split-check flow saved our staff hours every shift.",
+      author: "Julian Vance",
+      role: "General Manager",
+      business: "The Copper Oak Bistro (Chicago, IL)",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+      results: "Cut check closing time from 4 mins to 35 seconds across 32 tables.",
+    },
+  },
+  {
+    id: 'quick-service-qsr',
+    slug: 'quick-service-qsr',
+    title: 'Quick Service Restaurants (QSR) & Fast Casual',
+    tagline: 'Eliminate peak queues with 15-second counter ordering and autonomous AI kiosks.',
+    heroBadge: '⚡ QSR & Line-Busting Velocity',
+    description: 'Built for high-volume burger concepts, taquerias, boba shops, and drive-thrus where speed per transaction directly dictates daily gross revenue.',
+    benefits: [
+      {
+        title: 'High-Volume 15-Second Counter Flow',
+        description: 'Optimized touch grid with hotkeys, combo selectors, instant modifier popups, and integrated tap-to-pay.',
+        icon: 'Zap',
+      },
+      {
+        title: 'Self-Order Kiosks with AI Upselling',
+        description: 'Boost check averages by +22% with intelligent dynamic suggestions (add bacon, double patties, specialty drinks).',
+        icon: 'Smartphone',
+      },
+      {
+        title: 'Drive-Thru & Kitchen Bump Bars',
+        description: 'Multi-screen KDS integration with vehicle timer metrics, line holds, and wireless kitchen bump bars.',
+        icon: 'Clock',
+      },
+      {
+        title: 'Zero-Latency Offline Mode',
+        description: 'When the cloud goes down, your drive-thru and registers keep punching tickets and printing kitchen orders without pausing.',
+        icon: 'ShieldCheck',
+      },
+    ],
+    hardwareBundle: {
+      name: 'High-Velocity QSR Bundle',
+      tag: 'Peak Throughput Architecture',
+      image: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80',
+      description: '15.6" Fast-Touch Terminal + 21.5" Self-Service Kiosk + High-Speed Auto-Cutter Thermal Printer.',
+      specs: ['15.6" IP54 Water-Resistant POS', '21.5" Portrait Kiosk Stand', '250mm/s Auto-Cutter Printer', '2D Barcode Scanner'],
+      priceOutright: 1899,
+      priceHaas: 69,
+    },
+    metrics: [
+      { value: '15 sec', label: 'Avg Order-to-Payment' },
+      { value: '+22%', label: 'Kiosk Basket Boost' },
+      { value: '55%', label: 'Queue Time Reduction' },
+      { value: '$0', label: 'Cloud Outage Revenue Loss' },
+    ],
+    caseStudy: {
+      quote: "Installing Welinx kiosks took our lunch rush from a line wrapping around the block to seamless 90-second fulfillment. Our drink and side upsells shot up 26% in month one.",
+      author: "Elena Rostova",
+      role: "Co-Founder",
+      business: "Taqueria Fuego (5 Locations, Austin)",
+      avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80",
+      results: "Increased average order ticket from $14.20 to $18.10 with zero extra labor.",
+    },
+  },
+  {
+    id: 'retail-and-boutique',
+    slug: 'retail-and-boutique',
+    title: 'Retail Stores, Boutiques & High-Volume Supermarkets',
+    tagline: 'Manage 100,000+ SKUs, matrix variations, barcodes, and multi-store inventory with ease.',
+    heroBadge: '🛍️ Retail & Multi-SKU Engine',
+    description: 'Precision inventory control for apparel boutiques, specialty groceries, wine merchants, and hardware retailers. Never miss a sale due to out-of-stock discrepancies.',
+    benefits: [
+      {
+        title: 'Matrix Variant System (Size / Color / Fit)',
+        description: 'Create multi-dimensional products in one click. Track inventory at the child SKU level while keeping reporting clean.',
+        icon: 'Tag',
+      },
+      {
+        title: 'Lightning 2D Barcode & Scale Scanning',
+        description: 'Compatible with handheld wireless scanners, embedded scales, and custom barcode label printing.',
+        icon: 'Barcode',
+      },
+      {
+        title: 'Purchase Orders & Low-Stock Alerts',
+        description: 'Automated reorder point calculations based on 30-day velocity. Generate supplier POs directly from the dashboard.',
+        icon: 'Boxes',
+      },
+      {
+        title: 'Customer Loyalty & Digital Receipts',
+        description: 'SMS/Email receipts, Apple Wallet pass integration, and points balance redemption right at checkout.',
+        icon: 'Gift',
+      },
+    ],
+    hardwareBundle: {
+      name: 'Retail Power Countertop Bundle',
+      tag: 'Multi-SKU Speed',
+      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80',
+      description: '15.6" Dual-Screen Display (Customer Facing Ads) + Wireless 2D Barcode Scanner + Label Printer.',
+      specs: ['Dual 15.6" + 10.1" Displays', 'Omnidirectional 2D Scanner', 'Custom Barcode Printer', 'Electronic Cash Drawer'],
+      priceOutright: 1449,
+      priceHaas: 55,
+    },
+    metrics: [
+      { value: '100k+', label: 'SKU Capacity' },
+      { value: '99.8%', label: 'Inventory Accuracy' },
+      { value: '3x', label: 'Faster Restocking' },
+      { value: '45%', label: 'Repeat Loyalty Sales' },
+    ],
+    caseStudy: {
+      quote: "Managing 14,000 apparel SKUs across two stores used to mean weekly inventory nightmares. Welinx matrix variants and barcode lookup made cycle counting effortless.",
+      author: "Sophia Chen",
+      role: "Owner",
+      business: "Aura Boutique (Seattle, WA)",
+      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
+      results: "Eliminated $18,000/yr in phantom stockouts and shrinkage.",
+    },
+  },
+  {
+    id: 'franchises-and-chains',
+    slug: 'franchises-and-chains',
+    title: 'Multi-Unit Franchises, Chains & Enterprise Operators',
+    tagline: 'Centralized cloud governance with local-first branch resilience and consolidated reporting.',
+    heroBadge: '🏢 Multi-Tenant Enterprise Tier',
+    description: 'Empower headquarters with centralized menu management, global pricing rules, and cross-store royalty reporting while guaranteeing each branch functions 100% autonomously.',
+    benefits: [
+      {
+        title: 'Global Catalog & Regional Menu Pushes',
+        description: 'Push price updates, tax overrides, or seasonal items to 500+ stores instantly or schedule phased rollouts.',
+        icon: 'Globe',
+      },
+      {
+        title: 'Multi-Location Role-Based Access Control',
+        description: 'Granular permissions for regional directors, store managers, and frontline cashiers with PIN and biometric login.',
+        icon: 'Lock',
+      },
+      {
+        title: 'Consolidated Realtime Rollup Analytics',
+        description: 'Executive dashboard showing company-wide GMV, labor cost percentages, top-selling items, and cross-store transfers.',
+        icon: 'TrendingUp',
+      },
+      {
+        title: 'PostgreSQL Row-Level Security & Sync Engine',
+        description: 'Enterprise tenant isolation with bidirectional SQLite-to-Cloud sync engine handling millions of daily events.',
+        icon: 'Database',
+      },
+    ],
+    hardwareBundle: {
+      name: 'Enterprise Multi-Lane Fleet',
+      tag: 'Standardized Chain Architecture',
+      image: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=800&q=80',
+      description: 'Fleet-wide provisioning with pre-configured MDM hardware profiles, failover routing, and 24/7 VIP escalation.',
+      specs: ['Centralized Remote MDM Setup', 'Failover Cellular Backup', 'Enterprise KDS Displays', 'Zero-Touch Hardware Swaps'],
+      priceOutright: 2499,
+      priceHaas: 89,
+    },
+    metrics: [
+      { value: '500+', label: 'Stores per Tenant' },
+      { value: '14 ms', label: 'Cloud Sync Latency' },
+      { value: '100%', label: 'HQ Menu Uniformity' },
+      { value: '24/7/365', label: 'VIP SLA Support' },
+    ],
+    caseStudy: {
+      quote: "When a regional storm knocked out fiber internet across 12 of our stores, our competitors shut their doors. Our Welinx registers kept processing drive-thru and counter orders without a hitch.",
+      author: "Marcus Vance",
+      role: "VP of Operations",
+      business: "Metro Hospitality Group (38 Locations)",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+      results: "Saved an estimated $84,000 in prevented downtime revenue loss in a single weekend.",
+    },
+  },
+];
+
+export const PRODUCTS_DATA: ProductFeature[] = [
+  {
+    id: 'pos-register',
+    slug: 'pos-register',
+    name: 'Welinx POS Register',
+    category: 'Core Terminal',
+    tagline: 'High-speed, intuitive point-of-sale software for desktop, web, iPad, and Android.',
+    badge: '⚡ Blazing Fast Checkout',
+    headline: 'Engineered for extreme checkout speed and zero cashier friction.',
+    subheadline: 'A unified interface optimized for touchscreens, keyboard shortcuts, barcode scanners, and multi-tender split payments.',
+    highlights: [
+      {
+        title: 'Instant Touch UI with Modifier Nesting',
+        description: 'Easily select burger temperatures, side substitutions, cocktail mixers, and custom notes with zero screen clutter.',
+        stat: '< 0.2s response time',
+      },
+      {
+        title: 'Multi-Tender & Split-Bill Logic',
+        description: 'Accept split cash, card, gift cards, house accounts, and mobile wallets on a single check with seamless receipt splitting.',
+      },
+      {
+        title: 'Staff PINs & Fast Drawer Switching',
+        description: 'Switch between servers in under 1 second. Track individual cash drawer accountability and tips per shift.',
+      },
+    ],
+    techSpecs: [
+      { label: 'Supported Platforms', value: 'Windows 10/11, macOS, Ubuntu/Linux, Android 11+, iPadOS' },
+      { label: 'Offline Database', value: 'Local SQLite with WAL Mode & Auto-Compaction' },
+      { label: 'Peripheral Protocols', value: 'ESC/POS Thermal, OPOS/JPOS, USB HID, Serial RS232, Network LAN' },
+      { label: 'Payment Gateway', value: 'EMV Contactless, Apple Pay, Google Pay, Dual-Pricing Engine' },
+    ],
+    architecturePoints: [
+      'Electron / Native Chromium shell with hardware-accelerated WebGL rendering',
+      'Local caching of entire 100k SKU catalog for instantaneous sub-millisecond search',
+      'Automatic print spooler fallback queue during printer paper-out or network blips',
+    ],
+  },
+  {
+    id: 'offline-first-engine',
+    slug: 'offline-first-engine',
+    name: 'Local-First Zero-Downtime Engine',
+    category: 'Architecture Pillar',
+    tagline: '100% operational autonomy with local SQLite. Never lose a ticket to cloud outages.',
+    badge: '🛡️ True Offline Resilience',
+    headline: 'While legacy cloud POS systems freeze, Welinx never blinks.',
+    subheadline: 'Transactions, kitchen orders, inventory decrements, and receipts execute entirely on your local register. The moment internet returns, data synchronizes seamlessly with PostgreSQL.',
+    highlights: [
+      {
+        title: 'Independent Local-First SQLite DB',
+        description: 'Every terminal maintains an encrypted local copy of menu data, pricing rules, customer records, and pending transactions.',
+        stat: '100% offline uptime',
+      },
+      {
+        title: 'Deterministic Conflict Resolution Sync',
+        description: 'Smart conflict-free replicated data structures ensure order numbers, stock decrements, and receipts merge without discrepancies.',
+      },
+      {
+        title: 'Local Kitchen LAN Printing',
+        description: 'Orders fire directly to thermal kitchen printers over local subnet WiFi or Ethernet even if the WAN modem is disconnected.',
+      },
+    ],
+    techSpecs: [
+      { label: 'Local Store', value: 'Encrypted SQLite 3.45 with JSONB support' },
+      { label: 'Sync Protocol', value: 'Bidirectional WebSocket / HTTPS Delta Sync' },
+      { label: 'Security', value: 'AES-256 local database encryption & PCI P2PE tokenization' },
+      { label: 'Failover Mode', value: 'Automatic transparent fallback in 0.00s' },
+    ],
+    architecturePoints: [
+      'Zero dependency on internet connectivity for ringing orders, taking payments, and printing tickets',
+      'Store-and-forward card processing with offline risk caps and tokenized pre-authorizations',
+      'Multi-terminal store mesh sync allows registers to share open tables locally without internet',
+    ],
+  },
+  {
+    id: 'kitchen-display-system',
+    slug: 'kitchen-display-system',
+    name: 'Kitchen Display System (KDS)',
+    category: 'Back of House',
+    tagline: 'Paperless kitchen order routing with prep timers, color alerts, and bump bar control.',
+    badge: '👨‍🍳 Kitchen Precision',
+    headline: 'Eliminate lost paper tickets and speed up kitchen cook times.',
+    subheadline: 'Route orders to custom stations (Grill, Fryer, Salad, Expo), track ticket elapsed times, and notify waitstaff when dishes are plated.',
+    highlights: [
+      {
+        title: 'Custom Station Item Routing',
+        description: 'Send steaks to the grill KDS, sushi to the raw bar KDS, and drinks to the service bar display automatically.',
+        stat: '30% faster ticket fulfillment',
+      },
+      {
+        title: 'Color-Coded Elapsed Timers',
+        description: 'Tickets automatically shift from Green (under 5 min) to Yellow (under 10 min) to flashing Red (exceeded target prep time).',
+      },
+      {
+        title: 'Physical Bump Bar & Touch Support',
+        description: 'Operate with industrial USB bump bars or commercial touchscreen monitors with grease and heat resistance.',
+      },
+    ],
+    techSpecs: [
+      { label: 'Display Support', value: '15.6" to 32" HDMI/VGA Monitors & Android KDS Tablets' },
+      { label: 'Controls', value: '10-Key Industrial Bump Bars, USB Foot Pedals, Touchscreen Gestures' },
+      { label: 'Audio Alerts', value: 'Configurable order chimes and late-ticket audio warnings' },
+      { label: 'Integration', value: 'Native synchronization with front-of-house register floor maps' },
+    ],
+    architecturePoints: [
+      'Local multicast UDP synchronization for instant millisecond kitchen ticket arrival',
+      'Expo screen mode aggregates multi-station tickets before final handoff to servers',
+      'Real-time prep bottleneck analytics by item, station, and time of day',
+    ],
+  },
+  {
+    id: 'self-service-kiosk',
+    slug: 'self-service-kiosk',
+    name: 'Self-Service Order Kiosks',
+    category: 'Customer Facing',
+    tagline: 'Autonomous touch ordering with AI upselling that increases average ticket size by +22%.',
+    badge: '📱 Revenue Booster',
+    headline: 'Turn foot traffic into higher average order values with zero extra labor.',
+    subheadline: 'Sleek 21.5" touchscreen kiosks that let customers customize their meals, browse visual imagery, pay with tap-to-pay, and enter table numbers.',
+    highlights: [
+      {
+        title: 'Intelligent Dynamic Upselling',
+        description: 'Suggests complementary add-ons (extra avocado, artisanal drink pairing, dessert) tailored to the items in cart.',
+        stat: '+22% average basket boost',
+      },
+      {
+        title: 'Multi-Language & Accessibility',
+        description: 'One-touch language switching (English, Spanish, French, Mandarin) and ADA compliant low-reach accessibility mode.',
+      },
+      {
+        title: 'Integrated Contactless Card Reader',
+        description: 'Fast NFC tap, EMV chip insertion, and Apple Pay checkout with immediate digital receipt sending.',
+      },
+    ],
+    techSpecs: [
+      { label: 'Form Factors', value: '21.5" Portrait Floor Stand, Wall Mount, or Countertop' },
+      { label: 'Payment', value: 'Built-in PCI-certified EMV Tap & Chip Terminal' },
+      { label: 'Printer', value: 'Integrated 80mm Heavy-Duty Thermal Receipt Printer' },
+      { label: 'Branding', value: 'Custom logo, accent colors, animated screensavers, and brand imagery' },
+    ],
+    architecturePoints: [
+      'Self-healing kiosk watchdog resets session on customer abandonment or 60s inactivity',
+      'AI upselling recommendation engine trained on historical cart conversion patterns',
+      'Direct KDS firing with custom table tracker or pickup buzzer assignment',
+    ],
+  },
+  {
+    id: 'inventory-and-recipes',
+    slug: 'inventory-and-recipes',
+    name: 'Recipe-Level Inventory & Costing',
+    category: 'Operations & Margins',
+    tagline: 'Gram-level ingredient deduction on every sale with automated supplier purchase orders.',
+    badge: '📦 Margin Protection',
+    headline: 'Stop profit leakages and food waste before they hit your bottom line.',
+    subheadline: 'Connect your menu items to underlying ingredients. When a cheeseburger sells, Welinx automatically deducts 200g beef, 1 brioche bun, and 30g cheddar cheese.',
+    highlights: [
+      {
+        title: 'Gram-Level Recipe Deductions',
+        description: 'Calculate true Food Cost % in real-time. Know the exact gross margin on every cocktail, dish, or bakery item sold.',
+        stat: 'Save 3-5% food cost',
+      },
+      {
+        title: 'Automated Supplier Reordering',
+        description: 'Set par levels. Welinx generates consolidated purchase orders when stock reaches critical thresholds.',
+      },
+      {
+        title: 'Waste & Spillage Tracking',
+        description: 'Log kitchen burn, expired batch, or bartender comp with reason codes and cost impact reporting.',
+      },
+    ],
+    techSpecs: [
+      { label: 'Measurement Units', value: 'Metric & Imperial (Grams, Ounces, Kilograms, Liters, Units)' },
+      { label: 'Supplier Integrations', value: 'US Foods, Sysco, Sysco EDI, Custom CSV and PDF PO Export' },
+      { label: 'Variance Auditing', value: 'Barcode cycle counts and theoretical vs actual stock variance reports' },
+      { label: 'Multi-Location', value: 'Central commissary batching and inter-store stock transfers' },
+    ],
+    architecturePoints: [
+      'Hierarchical recipe nesting (e.g. Tomato Sauce sub-recipe used across 8 pasta dishes)',
+      'FIFO and Weighted-Average cost accounting models',
+      'Real-time low stock SMS and email alerts triggered to store managers',
+    ],
+  },
+  {
+    id: 'analytics-and-cloud',
+    slug: 'analytics-and-cloud',
+    name: 'Multi-Store Cloud Analytics',
+    category: 'Enterprise Intelligence',
+    tagline: 'Real-time telemetry across all registers, stores, and regions in one executive dashboard.',
+    badge: '📊 Executive Command Center',
+    headline: 'Every metric that drives your hospitality or retail business at your fingertips.',
+    subheadline: 'Access live sales velocities, labor vs sales percentages, heatmaps of peak hours, and product margin reports from your phone or desktop.',
+    highlights: [
+      {
+        title: 'Live Realtime Sales Stream',
+        description: 'Watch transactions sync live across all locations with second-by-second revenue velocity and average check tracking.',
+        stat: '14ms telemetry latency',
+      },
+      {
+        title: 'Labor Cost % vs Sales Tracker',
+        description: 'Compare active hourly payroll against live sales to keep labor costs within target 22-28% thresholds.',
+      },
+      {
+        title: 'Product Velocity & Menu Engineering Matrix',
+        description: 'Identify your "Stars" (high profit, high volume) vs "Plowhorses" and "Dogs" to optimize menu pricing.',
+      },
+    ],
+    techSpecs: [
+      { label: 'Data Architecture', value: 'PostgreSQL partitioned time-series storage with Row-Level Security' },
+      { label: 'Export Formats', value: 'QuickBooks Online, Xero, CSV, Excel, Automated Daily Email Digest' },
+      { label: 'API Access', value: 'GraphQL & REST Webhook APIs for BI tools (PowerBI, Tableau)' },
+      { label: 'Mobile Access', value: 'Responsive Web Portal + iOS & Android Executive Companion App' },
+    ],
+    architecturePoints: [
+      'Zero performance impact on local store registers during heavy analytics reporting queries',
+      'Role-based multi-tenant data isolation ensures store managers only see their assigned stores',
+      'Predictive AI forecasting anticipates staffing and prep requirements based on weather & calendar events',
+    ],
+  },
+];
+
+export const HARDWARE_ITEMS: HardwareItem[] = [
+  {
+    id: 'countertop-bundle',
+    name: 'Welinx Horizon 15.6" Countertop Terminal',
+    category: 'terminal',
+    tagline: 'Commercial-grade dual-screen POS station with aluminum unibody stand and integrated customer display.',
+    image: 'https://images.unsplash.com/photo-1556742049-0a67e5572293?auto=format&fit=crop&w=800&q=80',
+    priceOutright: 999,
+    priceLeasePerMonth: 39,
+    popular: true,
+    specs: [
+      '15.6" Full HD 1920x1080 Capacitive Touchscreen (IP54 Splash-Proof)',
+      '10.1" Rear Customer-Facing Display for Order Review & Loyalty',
+      'Intel Quad-Core 2.8GHz / 8GB RAM / 128GB High-Speed SSD',
+      'Ports: 6x USB 3.0, 2x RS232 Serial, 1x Gigabit RJ45 LAN, 1x Cash Drawer Port',
+    ],
+    features: [
+      'Rock-solid die-cast aluminum base with internal cable management',
+      'Built-in PCI P2PE EMV card reader bracket',
+      'Supports Windows 11 Pro, Linux, or Welinx OS',
+      '3-Year Next-Business-Day Advance Replacement Warranty',
+    ],
+    inStock: true,
+  },
+  {
+    id: 'kiosk-station',
+    name: 'Welinx Apex 21.5" Self-Service Kiosk',
+    category: 'kiosk',
+    tagline: 'Freestanding or countertop commercial touchscreen kiosk with integrated receipt printer and card terminal.',
+    image: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80',
+    priceOutright: 1799,
+    priceLeasePerMonth: 69,
+    popular: true,
+    specs: [
+      '21.5" Full HD Portrait IPS Touchscreen (10-point multi-touch)',
+      'Built-in 80mm High-Speed Thermal Auto-Cutter Printer (250mm/s)',
+      'Embedded 1D/2D QR Barcode Scanner with wide-angle lens',
+      'Integrated PCI EMV Contactless Payment Terminal enclosure',
+    ],
+    features: [
+      'Heavy-duty anti-tip steel floor stand or wall-mount bracket',
+      'Customizable backlit LED status halo',
+      'ADA compliant reach mode with one-touch button',
+      'Plug-and-play setup: boots directly into Welinx Kiosk Mode',
+    ],
+    inStock: true,
+  },
+  {
+    id: 'mobile-mpos',
+    name: 'Welinx Nomad 5.5" Handheld mPOS',
+    category: 'mpos',
+    tagline: 'Rugged pay-at-table and line-busting mobile terminal with built-in thermal printer and barcode scanner.',
+    image: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=800&q=80',
+    priceOutright: 499,
+    priceLeasePerMonth: 22,
+    specs: [
+      '5.5" HD IPS Touchscreen (usable with wet hands or gloves)',
+      'Integrated 58mm Thermal Receipt Printer for mobile receipts',
+      'Built-in EMV Chip & NFC Tap-to-Pay (Apple Pay, Google Pay certified)',
+      'Dual-band WiFi 6 + 4G LTE SIM slot for outdoor events & food trucks',
+    ],
+    features: [
+      '12-hour high-capacity hot-swappable 5000mAh battery',
+      'Drop-tested to 1.5 meters on concrete (MIL-STD-810G)',
+      'Instant table map and floorplan synchronization',
+      'Includes charging cradle and wrist strap',
+    ],
+    inStock: true,
+  },
+  {
+    id: 'thermal-printer',
+    name: 'Welinx TurboPrint 80mm Kitchen & Receipt Printer',
+    category: 'peripheral',
+    tagline: 'Heavy-duty thermal printer with auto-cutter, LAN, USB, and audible kitchen buzzer.',
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
+    priceOutright: 249,
+    priceLeasePerMonth: 12,
+    specs: [
+      '300mm/second ultra-high print speed',
+      'Standard 80mm thermal paper with drop-in loading',
+      'Connectivity: Triple Interface (Ethernet LAN + USB + Serial RS232)',
+      'Auto-cutter rated for 2,000,000 clean cuts',
+    ],
+    features: [
+      'Audible chime for noisy kitchen lines and order alerts',
+      'Splash-proof top cover design for restaurant grease resistance',
+      'Direct ESC/POS command set compatibility',
+    ],
+    inStock: true,
+  },
+  {
+    id: 'cash-drawer',
+    name: 'Welinx Vault Heavy-Duty Steel Cash Drawer',
+    category: 'peripheral',
+    tagline: 'Industrial steel cash drawer with RJ12 auto-kick printer connection and 5-bill/8-coin till.',
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80',
+    priceOutright: 149,
+    priceLeasePerMonth: 8,
+    specs: [
+      'Thick-gauge steel construction with ball-bearing roller suspension',
+      '5 Bill Slots with heavy-duty metal wire grips / 8 Coin Slots',
+      'Dual media slots for credit slips, checks, and large bills',
+      '3-position key lock (Locked, Manual Open, Electric Auto-Kick)',
+    ],
+    features: [
+      'Tested to over 1,000,000 drawer cycles',
+      'RJ12 printer interface cable included',
+      'Reinforced anti-pry security latch',
+    ],
+    inStock: true,
+  },
+  {
+    id: 'barcode-scanner',
+    name: 'Welinx ScanPro 2D Omnidirectional Scanner',
+    category: 'peripheral',
+    tagline: 'High-speed hands-free barcode reader for retail checkout lanes and supermarket queues.',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+    priceOutright: 179,
+    priceLeasePerMonth: 9,
+    specs: [
+      'Reads 1D, 2D, QR Code, DataMatrix, and PDF417 codes',
+      'Instant scan off glossy smartphone screens for loyalty and coupons',
+      'Adjustable angle desktop stand with auto-sense trigger',
+      'USB plug-and-play with zero driver configuration',
+    ],
+    features: [
+      'Ultra-wide scan window for rapid swipe-and-go retail checkout',
+      'Audible confirmation beep and green LED target indicator',
+    ],
+    inStock: true,
+  },
+];
+
+export const PRICING_TIERS: PricingTier[] = [
+  {
+    id: 'starter',
+    name: 'Starter Plan',
+    tagline: 'For pop-ups, food trucks, boutiques, and single-register stores.',
+    monthlyPrice: 39,
+    annualPrice: 29,
+    terminalsIncluded: 1,
+    processingRate: '2.6% + $0.10 or Dual-Pricing',
+    features: [
+      '1 POS Register Terminal License',
+      '100% Offline-First SQLite Engine',
+      'Standard Inventory & SKU Tracking',
+      'Basic Sales & Shift Reports',
+      'Up to 5 Staff PIN Accounts',
+      'Email & Community Support',
+      'Standard Receipt Printer & Cash Drawer Drivers',
+    ],
+    notIncluded: [
+      'Kitchen Display System (Optional $25/mo)',
+      'Self-Service Kiosk (Optional $39/mo)',
+      'Multi-Store Centralized Sync',
+      'Recipe-Level Gram Deductions',
+    ],
+    ctaText: 'Start 14-Day Free Sandbox',
+  },
+  {
+    id: 'pro',
+    name: 'Pro Hospitality',
+    tagline: 'For high-volume restaurants, fast-casual QSR, busy bars, and multi-lane retail.',
+    monthlyPrice: 89,
+    annualPrice: 69,
+    popular: true,
+    badge: 'Most Popular for F&B',
+    terminalsIncluded: 2,
+    processingRate: '2.4% + $0.10 or Dual-Pricing',
+    features: [
+      '2 POS Register Terminals Included',
+      '1 Kitchen Display System (KDS) Screen Included',
+      'Interactive Live Floorplan & Table Maps',
+      'Recipe & Gram-Level Ingredient Costing',
+      'Unlimited Staff PINs + Timeclock & Payroll Export',
+      'Course Firing & Split-Bill Engine',
+      'AI Upselling Module for Optional Kiosks',
+      '24/7 Priority Phone & Live Chat Support',
+    ],
+    ctaText: 'Start 14-Day Free Sandbox',
+  },
+  {
+    id: 'enterprise',
+    name: 'Enterprise Chain',
+    tagline: 'For multi-unit franchises, restaurant groups, and enterprise retail fleets.',
+    monthlyPrice: 249,
+    annualPrice: 199,
+    badge: 'Multi-Location Power',
+    terminalsIncluded: 5,
+    processingRate: 'Custom IC+ (Interchange + 0.20%)',
+    features: [
+      'Up to 5 Store Registers Included per Location',
+      'Unlimited Kitchen Displays (KDS) Included',
+      'Self-Service Kiosk License Included',
+      'Centralized Global Catalog & Regional Menu Pushes',
+      'Multi-Tenant Consolidated Rollup Reporting',
+      'Multi-Location Role-Based Access Control (RBAC)',
+      'Custom API & Webhook Access (GraphQL / REST)',
+      'Dedicated Account Executive & 15-Min SLA Support',
+    ],
+    ctaText: 'Contact Enterprise Sales',
+  },
+];
+
+export const ADDONS_DATA = [
+  {
+    title: 'Omnichannel Delivery Sync',
+    description: 'Auto-inject UberEats, DoorDash, and Deliveroo orders straight to your POS & KDS with zero tablet clutter.',
+    price: '$49 / location / mo',
+    icon: 'Bike',
+  },
+  {
+    title: 'AI Sales Forecasting & Auto POs',
+    description: 'Anticipate weekly foot traffic and automatically generate supplier purchase orders based on weather and historical trends.',
+    price: '$39 / location / mo',
+    icon: 'Brain',
+  },
+  {
+    title: 'Loyalty & Apple/Google Wallet Passes',
+    description: 'Turn one-time diners into lifelong regulars with automated points, SMS campaigns, and lockscreen passes.',
+    price: '$49 / mo',
+    icon: 'Sparkles',
+  },
+  {
+    title: 'Branded QR Table & Online Ordering',
+    description: 'Allow guests to order and pay right from their table phone without downloading an app.',
+    price: '$29 / location / mo',
+    icon: 'QrCode',
+  },
+];
+
+export const COMPETITOR_COMPARISONS: CompetitorComparison[] = [
+  {
+    competitor: 'Toast',
+    slug: 'vs-toast',
+    tagline: 'Why modern restaurant operators are breaking free from Toast POS.',
+    verdict: 'Toast locks you into proprietary Android hardware, exorbitant 2.99% + $0.15 payment rates, and freezes when cloud connectivity drops. Welinx delivers true local-first SQLite offline reliability, open hardware freedom, and $0 fee dual-pricing.',
+    table: [
+      { feature: 'Offline Architecture', welinx: '100% Local SQLite (Never Freezes)', competitor: 'Cloud-dependent (Frequent Outage Issues)', welinxAdvantage: true },
+      { feature: 'Hardware Lock-In', welinx: 'Open Hardware (PC, Mac, Linux, Android)', competitor: 'Proprietary Toast Hardware Only', welinxAdvantage: true },
+      { feature: 'Credit Card Processing', welinx: 'Transparent Dual-Pricing ($0 fee) or IC+', competitor: 'Strict Locked In-House Rates (2.9%+)', welinxAdvantage: true },
+      { feature: 'Kitchen Display (KDS)', welinx: 'Included or $25/mo flat', competitor: 'Expensive $75/mo add-on per screen', welinxAdvantage: true },
+      { feature: 'Contract Terms', welinx: 'Month-to-Month (Cancel Anytime)', competitor: 'Strict 2-3 Year Auto-Renewing Lock', welinxAdvantage: true },
+    ],
+    keyTakeaways: [
+      { title: 'Zero Cloud Downtime', description: 'When storms or ISP outages hit, Toast registers lock up and lose tickets. Welinx keeps ringing, processing, and printing locally.' },
+      { title: 'Eliminate $10,000+ in Processing Fees', description: 'Welinx dual-pricing passes zero-cost cash discounting to customers, instantly saving high-volume restaurants thousands every month.' },
+      { title: 'Run on Your Existing Hardware', description: 'Unlike Toast which forces you to trash existing thermal printers and cash drawers, Welinx connects to any standard ESC/POS hardware.' },
+    ],
+  },
+  {
+    competitor: 'Square',
+    slug: 'vs-square',
+    tagline: 'Upgrade from consumer-grade Square to enterprise-grade POS speed.',
+    verdict: 'Square is great for micro-merchants selling coffee from a cart, but crumbles under high-volume restaurant rushes, complex kitchen routing, gram-level recipe inventory, and multi-unit franchise controls.',
+    table: [
+      { feature: 'High-Volume Kitchen Routing', welinx: 'Advanced Multi-Station KDS & Bump Bars', competitor: 'Basic Single-Line Order Routing', welinxAdvantage: true },
+      { feature: 'Recipe & Ingredient Costing', welinx: 'Gram-Level Recipe Deductions & Waste Logs', competitor: 'Basic Item-Level Quantity Counts Only', welinxAdvantage: true },
+      { feature: 'Table Floorplan & Course Pacing', welinx: 'Full Visual Floorplan with Course Timers', competitor: 'Rudimentary Table Layout Add-On', welinxAdvantage: true },
+      { feature: 'Multi-Location Enterprise Tier', welinx: 'Centralized Multi-Tenant Cloud Architecture', competitor: 'Disjointed account switching', welinxAdvantage: true },
+      { feature: 'Dual-Pricing & Surcharge', welinx: 'Automated 100% Compliant Dual-Pricing', competitor: 'Limited or manual workarounds', welinxAdvantage: true },
+    ],
+    keyTakeaways: [
+      { title: 'Built for High-Ticket Velocity', description: 'Square slows down with complex item modifier trees and busy floorplans. Welinx executes sub-millisecond local queries.' },
+      { title: 'Hospitality-Grade KDS', description: 'Color-coded cook pacing, audio alerts, and industrial bump bar compatibility empower back-of-house culinary teams.' },
+      { title: 'Real Food Cost Control', description: 'Know your exact profit margins on every single dish with automated ingredient inventory deductions.' },
+    ],
+  },
+  {
+    competitor: 'Clover',
+    slug: 'vs-clover',
+    tagline: 'Say goodbye to Clover app store micro-fees and clunky legacy software.',
+    verdict: 'Clover advertises cheap hardware, then nickel-and-dimes merchants with $20-$50/mo third-party app subscriptions for basic features like employee timecards, table maps, and inventory reports.',
+    table: [
+      { feature: 'Unified Feature Ecosystem', welinx: 'All Features Included in One Platform', competitor: 'Dozens of monthly App Market subscriptions', welinxAdvantage: true },
+      { feature: 'Cloud vs Local Sync', welinx: 'Realtime Bi-directional SQLite-Postgres Sync', competitor: 'Legacy batch sync with frequent lag', welinxAdvantage: true },
+      { feature: 'Self-Service Kiosk Mode', welinx: 'Native AI Upselling Kiosk Software', competitor: 'Expensive specialized third-party kiosks', welinxAdvantage: true },
+      { feature: 'Developer API & Webhooks', welinx: 'Modern GraphQL, REST & Realtime Webhooks', competitor: 'Opaque legacy Clover REST endpoints', welinxAdvantage: true },
+    ],
+    keyTakeaways: [
+      { title: 'No Subscription Nickel-and-Diming', description: 'Everything is built into Welinx natively. You never have to install 12 buggy third-party apps just to run your floor.' },
+      { title: 'Modern Clean Aesthetic', description: 'Modern dark UI designed for low eye-strain in dimly lit bars and sleek minimalist restaurant counters.' },
+    ],
+  },
+];
+
+export const TESTIMONIALS_DATA = [
+  {
+    id: 1,
+    quote: "On Friday nights with 180 seats full, any POS freeze is catastrophic. When a regional fiber cut happened, Welinx didn’t drop a single ticket. The table map and split check flow saved us thousands.",
+    author: "Julian Vance",
+    role: "General Manager",
+    business: "The Copper Oak Bistro",
+    locations: "2 Locations (Chicago, IL)",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    stats: "38% faster table turns",
+  },
+  {
+    id: 2,
+    quote: "Installing Welinx kiosks took our lunch rush queue from 25 minutes down to under 5. Our customer drink and dessert upsells jumped by 26% in our first month. The ROI was instantaneous.",
+    author: "Elena Rostova",
+    role: "Co-Founder",
+    business: "Taqueria Fuego",
+    locations: "5 Locations (Austin, TX)",
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80",
+    stats: "+22% average ticket size",
+  },
+  {
+    id: 3,
+    quote: "We switched 38 franchise locations from Toast to Welinx. The dual-pricing engine alone saved our restaurant group over $140,000 in payment processing fees in year one.",
+    author: "Marcus Vance",
+    role: "VP of Operations",
+    business: "Metro Hospitality Group",
+    locations: "38 Locations (Midwest)",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    stats: "$140,000 annual processing savings",
+  },
+];
+
+export const FAQ_DATA = [
+  {
+    question: "How does the Offline-First architecture actually work?",
+    answer: "Every Welinx register runs a local, encrypted SQLite database right on the hardware. When you ring items, apply modifiers, split checks, or fire tickets to the kitchen, operations happen locally with sub-millisecond latency. Even if your internet connection is completely severed, registers, kitchen displays, and thermal printers communicate over your local store LAN. Once the internet restores, all transactions, inventory deductions, and sales delta-sync automatically to the cloud PostgreSQL database without conflicts."
+  },
+  {
+    question: "What is Dual-Pricing and how does it eliminate credit card fees?",
+    answer: "Dual-pricing is a 100% compliant merchant payment model where your menu prices reflect a discounted cash price and a standard card price. The Welinx terminal automatically calculates and displays the card vs. cash total on customer-facing screens and receipts. By passing the small card processing surcharge to cardholders, your business pays virtually 0% in merchant swipe fees, saving high-volume operators tens of thousands of dollars annually."
+  },
+  {
+    question: "Can I use my existing POS hardware (printers, cash drawers, iPads)?",
+    answer: "Yes! Welinx is built with open cross-platform architecture. We support standard ESC/POS thermal printers (Epson, Star Micronics), standard RJ12 electric cash drawers, USB/Bluetooth 2D barcode scanners, weight scales, and devices running Windows 10/11, macOS, Linux, Android, or iOS. You can also purchase our plug-and-play certified hardware bundles or lease them for $0 upfront with our HaaS financing."
+  },
+  {
+    question: "How long does onboarding and menu migration take?",
+    answer: "Most single and multi-unit merchants are up and running in under 24 hours. Our automated menu import engine can ingest CSVs, PDFs, or menus directly from Toast, Square, Clover, or Lightspeed. Our deployment specialists provide live 1-on-1 virtual training and 24/7 dedicated cutover support."
+  },
+  {
+    question: "Are there any long-term contracts or cancellation penalties?",
+    answer: "No. Unlike legacy legacy vendors that lock you into 2 to 3-year auto-renewing contracts, Welinx operates on transparent month-to-month subscriptions. We earn your business every single day with our product velocity, uptime, and customer support."
+  },
+];
