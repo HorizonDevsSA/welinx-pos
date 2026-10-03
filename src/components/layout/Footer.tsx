@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
+import { Logo } from '@/components/brand/Logo';
 
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -75,20 +76,8 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 gap-y-12">
           {/* Brand & Newsletter Column */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2 pr-0 lg:pr-6">
-            <Link to="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-400 p-[1px]">
-                <div className="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center font-display font-black text-xl text-emerald-400">
-                  W
-                </div>
-              </div>
-              <div>
-                <span className="font-display font-extrabold text-xl tracking-tight text-white">
-                  Welinx POS
-                </span>
-                <span className="block text-[10px] font-mono text-emerald-400">
-                  OFFLINE-FIRST COMMERCE OS
-                </span>
-              </div>
+            <Link to="/" className="inline-block">
+              <Logo />
             </Link>
 
             <p className="mt-4 text-sm text-slate-400 leading-relaxed">

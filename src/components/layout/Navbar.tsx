@@ -25,6 +25,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
+import { Logo } from '@/components/brand/Logo';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -58,26 +59,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-400 p-[1px] shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/40 transition-all">
-              <div className="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center">
-                <span className="font-display font-black text-xl bg-gradient-to-r from-emerald-400 to-cyan-300 bg-clip-text text-transparent">
-                  W
-                </span>
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1.5">
-                <span className="font-display font-extrabold text-xl tracking-tight text-white group-hover:text-emerald-300 transition-colors">
-                  Welinx
-                </span>
-                <span className="text-xs font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                  POS
-                </span>
-              </div>
-              <span className="text-[10px] font-mono text-slate-400 tracking-wider uppercase -mt-0.5">
-                Enterprise Cloud
-              </span>
-            </div>
+            <Logo animated />
           </Link>
 
           {/* Desktop Navigation Links */}
