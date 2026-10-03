@@ -9,7 +9,9 @@ import {
   Globe, 
   Lock, 
   Server, 
-  HeartHandshake 
+  Download,
+  Monitor,
+  Apple
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
@@ -46,15 +48,15 @@ export const Footer: React.FC = () => {
                 Eliminate cloud POS outages & wipe out credit card processing fees today.
               </h2>
               <p className="mt-3 text-slate-400 text-sm sm:text-base leading-relaxed">
-                Try the live interactive browser sandbox with zero registration, or schedule a custom walkthrough tailored to your menu and store setup.
+                Download the native desktop client for Windows and Mac, or explore the live interactive sandbox with zero registration.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
-              <Link to="/demo">
+              <Link to="/downloads">
                 <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2 border-emerald-500/40 text-emerald-300">
-                  <span>Explore Live Sandbox</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <Download className="w-4 h-4" />
+                  <span>Download Desktop App</span>
                 </Button>
               </Link>
               <Link to="/book-demo">
@@ -118,6 +120,43 @@ export const Footer: React.FC = () => {
                 </div>
               )}
             </form>
+          </div>
+
+          {/* Downloads & Apps Column */}
+          <div>
+            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-300 mb-4 flex items-center gap-1.5 text-emerald-400">
+              <Download className="w-3.5 h-3.5" />
+              <span>Native Apps</span>
+            </h3>
+            <ul className="space-y-2.5 text-sm text-slate-400">
+              <li>
+                <Link to="/downloads" className="hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                  <Monitor className="w-3.5 h-3.5 text-blue-400" />
+                  <span>Windows 10/11 (.exe)</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/downloads" className="hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                  <Apple className="w-3.5 h-3.5 text-slate-300" />
+                  <span>macOS (.dmg)</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/downloads" className="hover:text-emerald-400 transition-colors">
+                  Android Mobile Beta
+                </Link>
+              </li>
+              <li>
+                <Link to="/downloads" className="hover:text-emerald-400 transition-colors">
+                  Android Tablet Kiosks
+                </Link>
+              </li>
+              <li>
+                <Link to="/downloads" className="hover:text-emerald-400 transition-colors">
+                  ESC/POS Driver Suite
+                </Link>
+              </li>
+            </ul>
           </div>
 
           {/* Solutions Column */}
@@ -188,45 +227,6 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to="/products/analytics-and-cloud" className="hover:text-emerald-400 transition-colors">
                   Cloud Analytics Portal
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Hardware & Compare */}
-          <div>
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-300 mb-4">
-              Hardware & Compare
-            </h3>
-            <ul className="space-y-2.5 text-sm text-slate-400">
-              <li>
-                <Link to="/hardware" className="hover:text-emerald-400 transition-colors">
-                  15.6" Countertop POS
-                </Link>
-              </li>
-              <li>
-                <Link to="/hardware" className="hover:text-emerald-400 transition-colors">
-                  21.5" Portrait Kiosks
-                </Link>
-              </li>
-              <li>
-                <Link to="/hardware" className="hover:text-emerald-400 transition-colors">
-                  5.5" Handheld mPOS
-                </Link>
-              </li>
-              <li>
-                <Link to="/compare/vs-toast" className="hover:text-emerald-400 transition-colors">
-                  Switch from Toast
-                </Link>
-              </li>
-              <li>
-                <Link to="/compare/vs-square" className="hover:text-emerald-400 transition-colors">
-                  Switch from Square
-                </Link>
-              </li>
-              <li>
-                <Link to="/compare/vs-clover" className="hover:text-emerald-400 transition-colors">
-                  Switch from Clover
                 </Link>
               </li>
             </ul>

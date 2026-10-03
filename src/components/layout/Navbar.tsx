@@ -20,7 +20,8 @@ import {
   Sliders, 
   FileText, 
   PhoneCall, 
-  ArrowRight
+  ArrowRight,
+  Download
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
@@ -88,7 +89,7 @@ export const Navbar: React.FC = () => {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`flex items-center gap-1 px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
+                className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
                   location.pathname.startsWith('/solutions')
                     ? 'text-emerald-400 bg-emerald-500/10'
                     : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
@@ -181,7 +182,7 @@ export const Navbar: React.FC = () => {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`flex items-center gap-1 px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
+                className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
                   location.pathname.startsWith('/products')
                     ? 'text-emerald-400 bg-emerald-500/10'
                     : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
@@ -307,7 +308,7 @@ export const Navbar: React.FC = () => {
             {/* Hardware Link */}
             <Link
               to="/hardware"
-              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
+              className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
                 location.pathname === '/hardware'
                   ? 'text-emerald-400 bg-emerald-500/10'
                   : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
@@ -319,13 +320,29 @@ export const Navbar: React.FC = () => {
             {/* Pricing Link */}
             <Link
               to="/pricing"
-              className={`px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
+              className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
                 location.pathname === '/pricing'
                   ? 'text-emerald-400 bg-emerald-500/10'
                   : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
               }`}
             >
               Pricing
+            </Link>
+
+            {/* Downloads Link */}
+            <Link
+              to="/downloads"
+              className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors flex items-center gap-1.5 ${
+                location.pathname === '/downloads' || location.pathname === '/download'
+                  ? 'text-emerald-400 bg-emerald-500/10 font-bold'
+                  : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+              }`}
+            >
+              <Download className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Downloads</span>
+              <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 hidden xl:inline">
+                Win/Mac
+              </span>
             </Link>
 
             {/* Compare Dropdown */}
@@ -335,7 +352,7 @@ export const Navbar: React.FC = () => {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`flex items-center gap-1 px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
+                className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
                   location.pathname.startsWith('/compare')
                     ? 'text-emerald-400 bg-emerald-500/10'
                     : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
@@ -399,7 +416,7 @@ export const Navbar: React.FC = () => {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                className={`flex items-center gap-1 px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
+                className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
                   location.pathname.startsWith('/resources')
                     ? 'text-emerald-400 bg-emerald-500/10'
                     : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
@@ -479,10 +496,10 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile Menu Toggle Button */}
           <div className="flex items-center gap-2 lg:hidden">
-            <Link to="/demo">
-              <Button variant="outline" size="sm" className="px-2.5 h-9 text-xs border-emerald-500/40 text-emerald-400">
-                <Play className="w-3 h-3 fill-emerald-400" />
-                <span className="hidden sm:inline ml-1.5">Sandbox</span>
+            <Link to="/downloads">
+              <Button variant="outline" size="sm" className="px-2.5 h-9 text-xs border-emerald-500/40 text-emerald-400 flex items-center gap-1">
+                <Download className="w-3 h-3 text-emerald-400" />
+                <span className="inline">App</span>
               </Button>
             </Link>
             <button
@@ -501,6 +518,19 @@ export const Navbar: React.FC = () => {
         <div className="lg:hidden fixed inset-x-0 top-20 bottom-0 bg-[#090D16]/98 backdrop-blur-2xl border-t border-white/[0.08] p-6 overflow-y-auto animate-in fade-in slide-in-from-top-4 duration-200">
           <div className="flex flex-col gap-6">
             <div className="grid gap-2">
+              <div className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider px-2">
+                Get App & Software
+              </div>
+              <Link to="/downloads" className="p-2.5 rounded-lg text-emerald-300 bg-emerald-500/10 font-bold flex items-center justify-between">
+                <span className="flex items-center gap-2">
+                  <Download className="w-4 h-4 text-emerald-400" />
+                  <span>Download for Windows & Mac</span>
+                </span>
+                <span className="text-[10px] font-mono bg-emerald-500 text-slate-950 px-2 py-0.5 rounded font-black">v2.4</span>
+              </Link>
+            </div>
+
+            <div className="grid gap-2 pt-2 border-t border-slate-800">
               <div className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider px-2">
                 Solutions
               </div>
@@ -528,39 +558,11 @@ export const Navbar: React.FC = () => {
               <Link to="/products/offline-first-engine" className="p-2.5 rounded-lg text-slate-200 hover:bg-slate-800/60 font-medium">
                 🛡️ Offline SQLite Engine
               </Link>
-              <Link to="/products/kitchen-display-system" className="p-2.5 rounded-lg text-slate-200 hover:bg-slate-800/60 font-medium">
-                👨‍🍳 Kitchen Display System
-              </Link>
-              <Link to="/products/self-service-kiosk" className="p-2.5 rounded-lg text-slate-200 hover:bg-slate-800/60 font-medium">
-                📱 Self-Service Kiosks
-              </Link>
               <Link to="/hardware" className="p-2.5 rounded-lg text-slate-200 hover:bg-slate-800/60 font-medium">
                 📦 Certified Hardware Catalog
               </Link>
               <Link to="/pricing" className="p-2.5 rounded-lg text-slate-200 hover:bg-slate-800/60 font-medium">
                 🏷️ Pricing & Dual-Pricing Engine
-              </Link>
-            </div>
-
-            <div className="grid gap-2 pt-2 border-t border-slate-800">
-              <div className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider px-2">
-                Comparisons & Tools
-              </div>
-              <Link to="/compare/vs-toast" className="p-2.5 rounded-lg text-slate-200 hover:bg-slate-800/60 font-medium">
-                🔄 Welinx vs Toast
-              </Link>
-              <Link to="/compare/vs-square" className="p-2.5 rounded-lg text-slate-200 hover:bg-slate-800/60 font-medium">
-                🔄 Welinx vs Square
-              </Link>
-              <Link to="/compare/vs-clover" className="p-2.5 rounded-lg text-slate-200 hover:bg-slate-800/60 font-medium">
-                🔄 Welinx vs Clover
-              </Link>
-              <Link to="/resources/roi-calculator" className="p-2.5 rounded-lg text-slate-200 hover:bg-slate-800/60 font-medium">
-                💰 Processing Savings Calculator
-              </Link>
-              <Link to="/contact" className="p-2.5 rounded-lg text-slate-200 hover:bg-slate-800/60 font-medium flex items-center gap-2">
-                <PhoneCall className="w-4 h-4 text-emerald-400" />
-                <span>Contact & 24/7 Support</span>
               </Link>
             </div>
 

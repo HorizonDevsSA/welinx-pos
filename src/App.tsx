@@ -11,6 +11,7 @@ import { PricingPage } from '@/pages/PricingPage';
 import { ComparePage } from '@/pages/ComparePage';
 import { InteractiveDemoPage } from '@/pages/InteractiveDemoPage';
 import { BookDemoPage } from '@/pages/BookDemoPage';
+import { DownloadsPage } from '@/pages/DownloadsPage';
 import { RoiCalculatorPage } from '@/pages/RoiCalculatorPage';
 import { BlogPage } from '@/pages/BlogPage';
 import { DocsAndApiPage } from '@/pages/DocsAndApiPage';
@@ -37,6 +38,10 @@ export const App: React.FC = () => {
         <Routes>
           {/* Home */}
           <Route path="/" element={<HomePage />} />
+
+          {/* Downloads */}
+          <Route path="/downloads" element={<DownloadsPage />} />
+          <Route path="/download" element={<DownloadsPage />} />
 
           {/* Solutions */}
           <Route path="/solutions" element={<SolutionsPage />} />
